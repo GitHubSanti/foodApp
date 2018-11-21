@@ -1,0 +1,71 @@
+/*First Page*/
+#websearchpage {
+    background-image: url("images/searchpage.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-position-y: 50%;
+    background-size: cover;
+}
+
+/*Second Page*/
+#list {
+    background-image: url("images/resultspage.jpg");
+    background-repeat: repeat-y;
+    background-position: fixed;
+    
+    
+
+}
+/*Third Page*/
+#fmega {
+    background-image: url("images/resturantpage.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-position-y: 50%;
+    background-size: cover;
+}
+#city-weather-column {
+    position: fixed;
+    top: 100px ;
+    left: 0;
+    width: 200px;
+}
+
+
+
+.resturantName {
+    font-weight: bolder
+}
+
+.resturantNumber {
+    font-style: italic
+}
+
+.reviewname {
+    font-weight: bold
+}
+
+.reviewtext {
+    font-style: italic
+}
+
+.reviewrating {
+    font-style: italic;
+    font-weight: bold
+}
+
+.resturantImageDiv {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.resturantImage {
+    padding: 5px;
+}
+
+.responsive-img {
+    max-width: 100%;
+    height: auto;
+}

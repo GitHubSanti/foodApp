@@ -1,64 +1,107 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta
-      name="generator"
-      content="HTML Tidy for HTML5 (experimental) for Windows https://github.com/w3c/tidy-html5/tree/c63cc39"/>
+<head>
     <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Splash Page</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!-- Bootstrap CDN -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"/>
-    <!-- Materialize CDN -->
-    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"/>
-    <!-- Google Icons CDN -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet"/>
-    <!-- Custom css file -->
-    <link rel="stylesheet" type="text/css" href="assets/custom.css" />
-    <!-- jQuery reference | library -->
-    <script src="https://code.jquery.com/jquery.js"></script>
-    <!-- Custom javascript file -->
-    <script type="text/javascript" src="assets/app.js"></script>
-    <!-- Firebase reference | library -->
-    <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
-  </head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Fresh Findz</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="screen" href="customer.css" />
 
-  <body style="overflow-y:hidden">
-    <!-- 1st page (splash page) -->
-    <div class="row" id="splashPage">
-      <!-- Centering to Middle of Page With Materilize -->
-      <div class="valign-wrapper splashPage" id="splashPageContent">
-        <div class="container mx-auto card mb-4 z-depth-5" style="width:100%">
-          <div class="card-content">
-            <form>
-              <div class="form-group">
-                <!-- Search Bar -->
-                <div class="col s10">
-                  <input
-                    class="form-control"
-                    id="search-input"
-                    placeholder="enter a city to discover new resturants"
-                    type="text"
-                  />
-                </div>
-              </div>
-              <!-- Submit Button -->
-              <div class="col s2">
-                <!--
-                  <button class="btn btn-primary waves-effect waves-light float-right red pulse" id="submit-btn">
-                -->
-                <button
-                  class="btn btn-primary waves-effect waves-light float-right red pulse"
-                  id="submit-btn"
-                >
-                  Find Food
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
+</head>
+<body>
+
+
+    <!--Entry for a City-->
+    <div id="websearch" class = "row">
+        <!--Centering to Middle of Page With Materilize-->
+        <div class="valign-wrapper" id="websearchpage" style="width:100%;height:100%;position: absolute;">
+        <div class="valign" style="width:100%;">
+    <div class = "container">
+    <div class = "card mb-4 z-depth-5">
+    <div class = "card-content">
+       <form>
+            <div class="form-group yellow lighten-4">
+            <!--Search Bar-->
+            <div class = "col s10">
+            <input class="form-control" id="search-input" placeholder="Enter a City to Find Food Nearby" type="text">
+            </div>
+            </div>
+            <!--Submit Button-->
+            <div class = "col s2">
+            <button class="btn btn-primary waves-effect waves-light float-right red pulse" id="submit-btn">Find Food</button>
+            </div>
+        </form>
     </div>
-  </body>
+    </div>
+    </div>
+        </div>
+        </div>
+    </div>
+    <div id="list">
+            <nav>
+            <div class="nav-wrapper grey-text yellow lighten-4">
+                <form>
+                <div class="input-field">
+                    <input id="search" type="search" placeholder="Enter a New City to Find New Resturants" required/>
+                    <label class="label-icon" for="search"
+                    ><i class="material-icons">search</i></label
+                    >
+                    <i class="material-icons">close</i>
+                </div>
+                </form>
+            </div>
+            </nav>
+            <div class="container"><div class="list yellow lighten-4" id="resturant-results"></div></div>
+            <div class="col" id="city-weather-column">
+                <div class="card bg-light mb-3 mx-auto" style="max-width: 18rem;">
+                    <div class="card-header text-center"><span class="text-center"> Weather in <span id="city"></span></span></div>
+                    <div class="card-body">
+                        <!-- <h5 class="card-title">Light card title</h5> -->
+                        <img id="weather-icon-img-tag" class="mx-auto d-block" src="" alt="weather icon" width="100" height="100">
+                        <p id="weather-description" class="card-text text-center"></p>
+                        <p class="card-text text-center"><span class="card-text">Current Temp: <span id="weather-temp-current"></span></span>
+                        </p>
+                        <p class="card-text text-center"><span class="card-text">Today's High: <span id="weather-temp-high"></span></span>
+                        </p>
+                        <p class="card-text text-center"><span class="card-text">Today's Low: <span id="weather-temp-low"></span></span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+    </div>
+
+    <div id="fmega">
+  <!-- navbar -->
+  <nav>
+        <div class="nav-wrapper yellow lighten-4">
+            <form class="col">
+            <div class="input-field s4">
+                <input id="search" type="search" placeholder="Enter a New City to Find New Resturants" required />
+                <label class="label-icon" for="search"
+                ><i class="material-icons">search</i></label
+                >
+                <i class="material-icons">close</i>
+            </div>
+            </form>
+        </div>
+        </nav>
+    <!-- back button -->
+    <a class="waves-effect white-text red waves-light btn-large z-depth-5"><i class="material-icons left">chevron_left</i>Go Back To Results</a>
+    <!-- container -->
+
+    <div class = "container yellow lighten-4">
+        <!-- first row Right & Left -->
+        <div id="firstrow" class= "yellow lighten-4"></div>
+        <!-- Second row Pictures -->
+        <div id="secondrow" class= "yellow lighten-4"></div>
+        <!-- Third row reviews -->
+        <div id="thirdrow" class= "yellow lighten-4"></div>
+    </div>
+    </div>
+    <script type="text/javascript" src="app.js"></script>
+</body>
 </html>
