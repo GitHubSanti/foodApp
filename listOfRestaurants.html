@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="generator" content="HTML Tidy for HTML5 (experimental) for Windows https://github.com/w3c/tidy-html5/tree/c63cc39" />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Results Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Bootstrap CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous" />
+    <!-- Materialize CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+    <!-- Google Icons CDN -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <!-- Custom css file -->
+    <link rel="stylesheet" type="text/css" href="assets/custom.css" />
+    <!-- jQuery reference | library -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- Custom javascript file -->
+    <script type="text/javascript" src="assets/app.js"></script>
+    <!-- Firebase reference | library -->
+    <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+</head>
+
+<body id="listOfRestaurants" style="overflow-y:hidden">
+    <!-- 2nd page (list of resturants in city of interest) -->
+    <!-- <div id="resturantlistsPage"> -->
+    <nav>
+        <div class="nav-wrapper yellow lighten-4 rounded">
+            <form>
+                <div class="input-field">
+                    <input id="search" type="search" placeholder="enter a new city to discover new resturants" required/>
+                    <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                    <i class="material-icons">close</i>
+                </div>
+            </form>
+        </div>
+    </nav>
+    <div class="row" id="list">
+        <!-- Potential Filters column -->
+        <div class="col pt-5" id="city-weather-column">
+            <div class="card bg-light mx-auto" style="max-width: 15rem;">
+                <div class="card-header text-center"><span class="text-center"> Weather in <span id="city"></span></span>
+                </div>
+                <div class="card-body">
+                    <!-- <h5 class="card-title">Light card title</h5> -->
+                    <img id="weather-icon-img-tag" class="mx-auto d-block" src="" alt="weather icon" width="100" height="100">
+                    <p id="weather-description" class="card-text text-center"></p>
+                    <p class="card-text text-center"><span class="card-text">Current Temp: <span id="weather-temp-current"></span></span>
+                    </p>
+                    <p class="card-text text-center"><span class="card-text">Today's High: <span id="weather-temp-high"></span></span>
+                    </p>
+                    <p class="card-text text-center"><span class="card-text">Today's Low: <span id="weather-temp-low"></span></span>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-5 yellow lighten-4 rounded" id="resturant-results" style="height:100vh;overflow-y:auto"></div>
+        <div class="col"></div>
+    </div>
+</body>
+
+</html>

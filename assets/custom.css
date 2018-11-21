@@ -1,0 +1,26 @@
+/* body {
+  background-image: url("http://microbrasserienouvellefrance.com/wp-content/uploads/2017/04/restaurant-montage.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-position-y: -15%;
+} */
+#splashPageContent {
+  width:100%;
+  height:100%;
+  position: absolute;
+  /* background-image: url("http://microbrasserienouvellefrance.com/wp-content/uploads/2017/04/restaurant-montage.png"); */
+  background-image: url("searchpage.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  /* background-position-y: 50%; */
+  background-size: cover;
+}
+
+#list {
+  background-image: url("resultspage.jpg");
+  background-repeat: repeat-y;
+  background-position: fixed;
+  
+
+}
+
